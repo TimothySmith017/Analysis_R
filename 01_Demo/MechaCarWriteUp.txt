@@ -1,0 +1,54 @@
+Mecha Car Writeup analysis:
+
+- One of the first steps in my analysis was to create a multiple linear regression model that would examine how multiple variables from the
+Mecha Car dataset were influencing the MPG (Miles Per Gallon) value of the dataset. My Multiple linear regression model used the variables:
+vehicle.weight, vehicle.length, spoiler,angle, ground.clearance, and whether the car had all-wheel drive (AWD).
+
+The results of the Multiple Linear Regression model revealed that both vehicle.length and ground.clearance provided significant (or non-random) amount of 
+variance to the mpg models in the dataset. Basically, what this means is that the length of the vehicle and the vehicles ground clearance had a significant effect on 
+the mpg of a car. We can verify this by looking in the results and seeing that the P values for these variables were less than 0.05.
+The slope of the linear model is NOT considered zero for a number of possibilities. The first of which is that we did find variables that were significant
+in producing variance with the MPG, so we would reject the null hypothesis. Other reasons why include that the slope or the line was -1.040e+02 meaning it was negative and to the power of 100.
+Lastly, this model does NOT very effectively predict the MPG of Mecha Car Prototypes mostly to the fact that our intercept value was significant.
+What this means is that there are likely to be OTHER variables not included in the dataset that are producing significant effects on the MPG of Mecha Cars. In order to get a model that effectively
+predicts the MPG of Mecha Cars, we would want a Multiple Linear Regression model that included these values. Also, from my knowledge of cars, there are
+more variables that go into MPG outside of just the length and ground clearance. None of these variables have to do with the engine makeup and how fuel is burned in the car.
+
+Suspension Coil Summary:
+After running a summary statistics table for the suspension coil Pounds per Square Inch (PSI) continuous variable, I was able to observe the following metrics:
+
+Lot 1: Mean = 1500.018, Median = 1500.206, Variance = 1.146, SD = 1.071
+Lot 2: Mean = 1499.571, Median = 1498.873, Variance = 10.132, SD = 3.183
+Lot 3: Mean = 1499.004, Median = 1497.981, Variance = 220.011, SD = 14.833
+
+My interpretation of these findings is that the Mean and the Median PSI were quite close together. What this means is that the middle of
+the dataset happened to coincide with the average of the dataset. There seems to be a much wider spread of the PSI in Manufacturing lot #3.
+Since the median and the mode are still roughly the same as the other 2 lots, it seems like there must be a few coils with defects that are
+resulting in both very high or very low PSI. This is indicated by the much higher rates of variance and standard deviation.
+
+The MechaCars manufacturing specifications state that the variance for the PSI should not exceed 100 PSI. Well after calculating the summary statistics
+I can conclude that based on this data, Lots 1 and 2 are complying with this guidance in that their variances are MUCH less than the 
+100 PSI detailed in the manufacturing specifications. However lot 3 on its own is definitely non compliant in that its variance is over twice
+as much as the manufacturing specs. At the same time, If i take the mean of all 3 of these variances together, it would come out to about
+76 PSI. So the mean of the variances are within the specs. What I would recommend is that quality control investigate the coils in lot 3
+for outliers that are contributing to such a high variance.
+
+Suspension Coils T-Test: Using a 1500 theoretical mean.
+One other analyses I conducted was a one-tailed T test on the Suspension Coils PSI. The resulting P value ended up being less then our
+significance level of 0.05. With this result in mind, I can reject the null hypothesis and therefore accept the alternative hypothesis that
+the true mean is not equal to 1500.
+
+
+Designing my own study:
+One study I would like to know regarding the Mecha Cars data is that I would like to look at how the quarter mile time of a Mecha Car is
+affected by the horsepower and spoiler angle. Therefore, the question I would have is: Does the quarter mile of the car significantly depend on
+the horsepower given the spoiler angle?
+
+The Null hypothesis is my experiment would be that quarter mile time is NOT significantly effected by the horsepower and spoiler angle of the car
+while the Alternative hypothesis would be that horsepower and spoiler angle contribute a non-random amount of variance to a car's quartermile time
+
+The type of test required would be a two-way Analysis of Variance (ANOVA). The independent variables are HP and spoiler angle, while the quartermile time
+would be the dependent variable.
+
+The data that I would need collected would be samples of the quartermile times of Mecha Cars, their spoiler angles, and I would need data for the MPG.
+Some of this data is already in the dataset, but I might need more depending on how large of a sample I would want to use for the test.
